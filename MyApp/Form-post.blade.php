@@ -37,10 +37,7 @@ This is Error :
         <button type="submit">Save !</button>
     </form>
     
-   
-    Two : 
-    
-    {{ csrf_field() }}
+ 
 
     Ex two:
 
@@ -56,6 +53,102 @@ This is Error :
     </form>
     
 
+
+   Ex Three : 
+
+    <form action="" method="POST">
+    
+         @csrf
+         <input type="text" name="name" placeholder="Your name ">
+         <br>
+         <textarea name="text" id="" cols="30" rows="10" placeholder="Your masessg"></textarea>
+         <br>
+         <button type="submit">Save !</button>
+     </form>
+     
+     
+     
+     
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+
+
+This form for route put : 
+
+
+EX 1 : 
+
+<form action="ran" method="POST">
+    
+    <input type="hidden" name="_method" value="put">        // This is the put method
+    @csrf
+    <input type="text" name="name" placeholder="Your name ">
+    <br>
+    <textarea name="text" id="" cols="30" rows="10" placeholder="Your masessg"></textarea>
+    <br>
+    <button type="submit">Save !</button>
+</form>
+
+
+EX 2 : 
+
+<form action="ran" method="POST">
+
+    @method("put")        // This is the put method
+    @csrf
+    <input type="text" name="name" placeholder="Your name ">
+    <br>
+    <textarea name="text" id="" cols="30" rows="10" placeholder="Your masessg"></textarea>
+    <br>
+    <button type="submit">Save !</button>
+</form>
+
+
+    And All Routs : 
+
+    Routs for patch : 
+
+    <form action="ran" method="POST">
+
+        @method("patch")
+        @csrf
+        <input type="text" name="name" placeholder="Your name ">
+        <br>
+        <textarea name="text" id="" cols="30" rows="10" placeholder="Your masessg"></textarea>
+        <br>
+        <button type="submit">Save !</button>
+    </form>
+    
+    
+
+    Routs for delete : 
+
+    <form action="ran" method="POST">
+
+        @method("delete")
+        @csrf
+        <input type="text" name="name" placeholder="Your name ">
+        <br>
+        <textarea name="text" id="" cols="30" rows="10" placeholder="Your masessg"></textarea>
+        <br>
+        <button type="submit">Save !</button>
+    </form>
+    
+    
+    
+    
+    
+    
+ ------------------------------------------------------------------------------------------------------
+
+ 
+ 
+      
 
 
 
