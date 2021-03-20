@@ -1,0 +1,99 @@
+
+
+   Routes :
+
+  Routes is  URL 
+
+  Types : 
+
+
+  POST          : Create 
+  GET           : view 
+  PUT           : replace 
+  PATCH         : partial 
+  DELETE        : delete (destroy)
+
+
+
+
+
+
+  Ex : 
+
+Route::get('/',function(){
+    // code ..
+});
+
+
+Route::post('/',function(){
+    // code ..
+});
+
+
+Route::put('/',function(){
+    // code ..
+});
+
+
+Route::patch('/',function(){
+    // code ..
+});
+
+
+Route::delete('/',function(){
+    // code ..
+});
+
+
+
+
+-------------------------------------------------------------------------
+  EX :      You can use one Name in Routes 
+-------------------------------------------------------------------------
+
+Route::get('/Ran',function(){
+    // code ..
+});
+Route::post('/Ran',function(){
+    // code ..
+});
+Route::put('/Ran',function(){
+    // code ..
+});
+Route::patch('/Ran',function(){
+    // code ..
+});
+Route::delete('/Ran',function(){
+    // code ..
+});
+
+
+----------------------------------------------------------------------------
+                        Prameter 
+----------------------------------------------------------------------------
+
+
+    # This is you shode by write your ID 
+
+ Route::get('users/{id}', function ($id = null) {
+    echo "Welcome " . $id ;
+ });
+
+
+
+    # This is you not shode by write The id 
+
+
+
+Ex 1 : 
+
+ Route::get('users/{id?}', function ($id = null) {
+    echo "Welcome " . $id ;
+ });
+
+
+Ex 2 : 
+
+ Route::get('users/{id?}/email/{email?}', function ($id = null , $email = null) {
+    echo "Welcome " . $id "and your email is " . $email;
+ });
