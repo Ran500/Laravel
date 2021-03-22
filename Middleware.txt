@@ -1,0 +1,80 @@
+
+ 1 - Create the middleware : 
+
+ # php artisan make:middleware NameMidd
+
+
+
+ 2 - Go to folder app\Http\Middleware 
+
+=====
+ Ex : in page middleware 
+
+    public function handle($request, Closure $next)
+    {
+           $today = date('D');
+
+           if($today != 'Mon'){
+
+               return redirect()->to('close-sys');
+
+           }
+
+        return $next($request);
+    }
+=====
+
+
+3 - Go to folder app\Http\Middleware and file Kernel.php    :
+    
+    A - Go protected $routeMiddleware  .
+
+    B - write name middleware and  \App\Http\Middleware\
+
+=====
+    Ex : 
+
+    'NameMidd' => \App\Http\Middleware\NameMidd::class,
+=====
+
+
+
+4 - Go to folder routes and file web.php  Create the Route :
+
+=====
+    Ex : 
+
+    Route::get('/ran', function () {
+        echo "This is post is't Done > ";
+    })->middleware('ChekeDay');
+
+    Route::get('close-sys', function () {
+        echo "This is Page 404 ";
+    });
+
+=====
+
+        Middleware : >
+         
+                            ----------------------
+                            -                    -
+                            -   HTTP request     -
+                            -                    -
+                            -                    -
+                            ----------------------
+                                     ||
+                                     || 
+                                     ||
+                            ------------------------
+                            -                      -
+                            -      Middleware      -
+                            -                      -
+                            ------------------------
+                                      || 
+                                      ||
+                                      || 
+                            -------------------------
+                            -                       -
+                            -       Application     -
+                            -                       -
+                            -------------------------       
