@@ -1,0 +1,151 @@
+
+
+
+    Controllers :
+
+
+
+                                HTTP Request 
+                              ----------------  
+                                     ||
+                                     ||
+                                     ||
+                                    
+                                    Route
+                             -------------------
+                                     ||
+                                     ||
+                                     ||
+                                     ||
+                                
+                              Controller method 
+
+
+
+
+ Creat the Controller and used  : 
+
+
+ 1 - write the code in cmd for create the Controller :
+    
+       # php artisan make:Controller NameController
+
+
+ 2 - Go to app/Http/Controllers   and file Controller name :
+
+    and write the public function and name and code 
+
+    Ex : 
+=====
+     public function __construct()
+    {
+        
+    }
+    public function index(){
+        return "Hello From Controllers ";
+    }
+=====
+
+    
+ 3 - Go to web.php and write the Route :
+    
+    Ex : 
+=====
+    Route::get('/index','NewController@index');
+=====
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------
+
+
+        use the Middleware in Controller    : 
+
+        before : old use 
+
+    Ex : 
+====
+    Route::get('/cd','NewController@index')->middleware('ChekeDay');
+====
+*****************************************************************************
+        after : new use 
+
+    Ex : 
+=====
+
+    Route::get('/cd','NewController@index');
+
+    and in page for Controller in class : 
+
+    public function __construct()
+    {
+        $this->middleware('ChekeDay');  
+    }
+    public function index(){
+        return "Hello From Controllers ";
+    }
+=====
+
+    Note : 
+
+            you can add more middleware in Controller 
+
+            Ex :
+
+             public function __construct()
+            {
+                $this->middleware('auth');
+                $this->middleware('ChekeDay');
+            }
+
+            Or 
+
+            
+             public function __construct()
+            {
+                $this->middleware(['auth','ChekeDay']);
+            }
+
+            Or except method in class Controller
+
+            
+             public function __construct()
+            {
+                $this->middleware('auth')->except('about');
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    This is For Watch your Controller
+
+php artisan route:list
+
++--------+----------+-----------+------+------------------------------------------+--------------+
+| Domain | Method   | URI       | Name | Action                                   | Middleware   |
++--------+----------+-----------+------+------------------------------------------+--------------+
+|        | GET|HEAD | /         |      | Closure                                  | web          |
+|        | GET|HEAD | api/user  |      | Closure                                  | api,auth:api |
+|        | GET|HEAD | cd        |      | App\Http\Controllers\NewController@index | web,ChekeDay |      // This is Ex .
+|        | GET|HEAD | close-sys |      | Closure                                  | web          |
++--------+----------+-----------+------+------------------------------------------+--------------+

@@ -5,3 +5,9 @@
 
 
 # php artisan make:middleware NameMidd	       // Creat Middleware 
+
+
+# php artisan route:list		// show all routes
+
+
+# php artisan make:Controller  NameController  // Creat the Controller
