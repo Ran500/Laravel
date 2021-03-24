@@ -1,0 +1,88 @@
+
+
+
+    Sessions 
+
+    1) Save temp data 
+    2) Each user has unique session ID 
+    3) can be access from Request or Session 
+
+                        // This is in page Controller 
+------------------------------------------------------------------------------
+
+    This is for show all name session :
+
+          dd($request->all());
+=======
+    Ex : 
+
+    
+    public function add (Request $request){
+
+        dd($request->all());
+
+     
+    }
+=======
+------------------------------------------------------------------------------
+
+    This is for add session in Request :
+
+     $request->session()->put(' ',$request-> );
+=======
+    Ex : 
+
+    
+    public function add (Request $request){
+
+        $request->session()->put('username',$request->name);
+
+        return 'done';
+
+    }
+=======
+
+
+------------------------------------------------------------------------------
+
+
+    This is for get session Request : 
+
+
+    $username = $request->session()->get(' ' , 'This is deflut value');
+
+=======
+    Ex : 
+
+
+    
+    public function about (Request $request){
+
+        $username = $request->session()->get('username' , 'user empty');
+
+        return view('about', ['username'=> $username ]);
+    }
+=======
+
+
+------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
