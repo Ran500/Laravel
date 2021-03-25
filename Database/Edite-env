@@ -1,0 +1,22 @@
+
+
+
+
+            Thsi is the Database file settings = .env 
+
+
+DB_CONNECTION=mysql          
+DB_HOST=127.0.0.1               
+DB_PORT=3306
+DB_DATABASE= Laravel-5      // This is Name Database Tabel 
+DB_USERNAME=root            // This is Name User 
+DB_PASSWORD=                // This is password 
+
+
+        if add edite write this in cmd 
+    
+    # php artisan config:cache
+
+        For save Last edite
+
+

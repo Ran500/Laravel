@@ -1,0 +1,22 @@
+You must configure the .env 
+file settings before performing these commands
+
+
+                
+                
+                This is For downlode ui 
+
+
+
+1 ) - # composer require laravel/ui -vvv
+
+
+
+
+2 ) - # php artisan ui vue --auth
+
+
+
+3 ) - Retype the command twice : 
+    
+    # npm install && npm run dev 

@@ -1,0 +1,31 @@
+
+
+
+
+        You Showd downlode this : 
+
+
+
+
+1 ) -  xampp  
+
+url = https://www.apachefriends.org/xampp-files/7.3.27/xampp-windows-x64-7.3.27-0-VC15-installer.exe
+
+
+
+
+2 ) - composer in xampp\php\php.exe 
+
+url = https://getcomposer.org/
+
+
+
+
+
+
+3 ) - Laravel 5 in cmd 
+
+# composer create-project --prefer-dist laravel/laravel blog "5.7.*"
+
+
+
