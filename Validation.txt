@@ -30,7 +30,7 @@
 
 
 
-            Ex :   in Page Form  For show the errors 
+            Ex :   in Page Form  For show the errors Maseage
 
         @if ($errors->any())
 
@@ -47,3 +47,16 @@
 
 ---------------------------------------------------------------------------
 
+                                 Add options
+
+                    min:value or max:value
+===========
+    Ex : 
+
+        $validatedData = $request->validate([
+
+            'name' => 'required|max:20',
+            'maseg' => 'required|min:10|max:100'
+        ]);
+
+===========
