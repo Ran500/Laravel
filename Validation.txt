@@ -1,0 +1,49 @@
+
+
+                       Data validation 
+
+1) check request 
+2) valid pass ,
+3) invalid request 
+
+---------------------------------------------------------------------------
+
+                  This is For validation 
+
+            $validatedData = $request->validate
+===========
+    Ex :     in Page Controller 
+
+    
+    public function add (Request $request){
+
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'maseg' => 'required'
+        ]);
+
+        $request->session()->put('username',$request->name);
+
+        return 'done';
+
+    }
+
+
+
+            Ex :   in Page Form  For show the errors 
+
+        @if ($errors->any())
+
+            <ul>
+                   @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                   @endforeach
+
+            </ul>
+
+        @endif
+
+===========
+
+---------------------------------------------------------------------------
+
