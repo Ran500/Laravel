@@ -20,3 +20,8 @@ file settings before performing these commands
 3 ) - Retype the command twice : 
     
     # npm install && npm run dev 
+    
+
+
+
+4 ) - # php artisan make:auth
