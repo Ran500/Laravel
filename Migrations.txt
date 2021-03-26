@@ -1,0 +1,23 @@
+
+
+
+    Migrations : 
+
+
+ 1 ) Database system 
+ 2 ) Version Control 
+ 3 ) php Classes
+ 4 ) Creates tables 
+ 5 ) Modifies tables 
+
+
+
+----------------------------------------------------------------------
+
+
+    1 - For Create Page Migration write in cmd : 
+
+    # php artisan make:migration create_Name_tabel 
+
+
+    2 - 

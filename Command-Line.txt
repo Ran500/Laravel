@@ -12,5 +12,6 @@
 
 # php artisan make:Controller  NameController  // Creat the Controller
 
+# php artisan make:migration create_Name_tabel   // Creat Page migration
 
 # php artisan migrate 			// For add Tabel in mysql 
