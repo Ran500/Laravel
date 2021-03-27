@@ -11,13 +11,38 @@
  5 ) Modifies tables 
 
 
+                Go To folder Database/Migration
 
 ----------------------------------------------------------------------
 
 
-    1 - For Create Page Migration write in cmd : 
+        For Create Page Migration write in cmd : 
 
-    # php artisan make:migration create_Name_tabel 
+    # php artisan make:migration create_Name_tabel              // This is Name For Class
+
+        For Create Page migration and selecte Name of table :
+    
+    # php artisan make:migration create_Name_tabel  --create=NameTable              // This is Name For Table 
+
+        For add in table migration :
+         // Name class is "artisan" and Name table "artisan"   
+    # php artisan  make:migration add_colums_to_artisan --table=artisan
+  
 
 
-    2 - 
+----------------------------------------------------------------------
+
+
+                      Command line For migration 
+
+    # php artisan migrate           [ up() ]                  //    Run the database migrations
+
+    # php artisan migrate:reset     [  down() ]              // Rollback all database migrations
+
+    # php artisan  migrate:refresh  [  down() and up() ]     // Reset and re-run all migrations 
+
+    # php artisan  migrate:fresh    [ delete and up() ]      // Drop all tables and re-run all migrations
+
+     # php artisan migrate:status       // Show you all migration Tabel
+
+     # php artisan migrate:rollback     //  Rollback the last database migration
