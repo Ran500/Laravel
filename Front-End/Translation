@@ -1,0 +1,96 @@
+
+
+
+                        Translation method 
+    
+There are two methods : 
+
+   # The first to use PHP matrices .
+
+   # The second using Json  . 
+
+
+-------------------------------------------------------------------------------------------
+                        Prepare application data for translation
+
+      *  Go To folder config/app.php
+
+       This is For The language of the page : 
+
+            'locale' => 'en',
+            'dir' => 'ltr',
+
+        Default language : 
+
+            'fallback_locale' => 'en',
+
+
+######
+When modifying a config file,
+ the code must be written into the terminal for saving
+
+ # php artisan config:cache // For save edite  
+
+######
+
+
+
+     * if you want to change language auto example : 
+             in page app.blade.php
+
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ config('app.dir') }}">
+            in page config/app.php   
+
+            'locale' => 'en',
+            'dir' => 'ltr',
+     
+-------------------------------------------------------------------------------------------
+
+    PHP matrices
+
+1 - Go to folder resources/lang-en  
+
+
+2 - Create folder language example Arabic = ar 
+
+
+3 - Create files similar to other language files in folder ar 
+
+
+4 - write this in page : 
+
+        <?php
+
+            return [
+
+            'key word' => 'Translation',
+            'key word' => 'Translation',
+
+             ];
+and in page use 
+
+        1 - @lang('FileName.word') 
+
+        2 - {{trans('FileName.word')}}  
+
+
+
+-------------------------------------------------------------------------------------------
+
+    Json matrices 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

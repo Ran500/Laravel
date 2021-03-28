@@ -1,0 +1,15 @@
+
+
+
+        This is For php in {page.blade.php} 
+
+
+ 1    <p> Today : {{ date('Y-m-d H:i:s') }} </p>
+
+    This is the result :[ Today : 2021-03-28 04:32:58 ]
+
+ 2    @php $today = date('Y-m-d H:i:s') @endphp
+ 
+        <p> Today : {{$today}} </p>
+
+    This is the result :[ Today : 2021-03-28 04:32:58 ]

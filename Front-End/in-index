@@ -1,0 +1,63 @@
+
+
+
+
+
+
+    If you want to print a normal variable in page : 
+        $var = "Hello , World! "
+                {{ $var }}
+    If you want to print an HTML tag in page : 
+      $var = "<div>Hello , <b>World </b>! </div>"
+                {!! $var !!}
+
+The difference between them is that in the first option only the variable is disclosed,
+but in the second option the tag is executed in HTML
+
+-----------------------------------------------------------------------------------------
+
+                      include
+Ex : 
+
+    @extends('layouts.app')
+
+    @section('title',__('TestPage'))
+
+    @section('content')
+
+        @include('_inc.masseg')
+
+        <p>This is For Testing</p>
+
+    @endsection
+
+
+-----------------------------------------------------------------------------------------
+
+Ex : 
+
+
+# <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title> // More dynamic title
+
+
+# 
+  <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>  // Contact with file js 
+  <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> // Contact with file Css
+
+
+#  <a class="navbar-brand" href="{{ url('/') }}"> // View full link Example : 
+
+      <a href="https://laravel-news.com">News</a>
+
+
+
+
+#  <a class="nav-link" href="{{ route('login') }}">login</a> // Route 
+
+
+# <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+
+-----------------------------------------------------------------------------------------

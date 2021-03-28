@@ -1,0 +1,33 @@
+
+
+
+                If you want to change the name for App or title  
+
+    
+
+
+
+        The first method : 
+
+    Go To folder /config/app.php and write this :
+
+     'name' => env('APP_NAME', 'Laravel')
+    Or 
+     'name' =>'Name'
+
+---------------------------------------------------------------------------------------
+        The second method : 
+
+    Go To file .env change APP_name :
+
+          APP_NAME=laravel
+
+---------------------------------------------------------------------------------------
+         The third method : 
+   Go to folder  /views/layouts/app.blade.php and write This : 
+
+  1 -  <title>{{ config('app.name', 'Laravel') }}</title>     
+  2 -  <title>{{ config('app.name', 'Laravel') }} - @yield('title')</title>  
+  3 -  <title> @yield('title')</title>
+  4 -  <title>Name </title>
+

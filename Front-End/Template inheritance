@@ -1,0 +1,44 @@
+
+
+   [ @yield - @section - @extends ] 
+
+-----------------------------------------------------------------------------------
+
+    extends : The code to make inheritance 
+Ex : 
+
+    The page you want to inherit the values write IN first : 
+
+            @extends('layouts.app')
+
+-----------------------------------------------------------------------------------
+
+   yield and section : 
+Ex : 
+        in Page app.blade.php : This is Home page 
+        
+        <div class="container">
+            @yield('content')
+        </div>
+
+        in page index.blade.php : This is the page you inherit 
+
+        @section('content')
+
+            <p>This is For Testing</p>
+
+        @endsection
+-----------------------------------------------------------------------------------
+
+    
+    Example : 
+
+            @extends('layouts.app')
+
+            @section('title',__('TestPage'))
+
+            @section('content')
+
+                 <p>This is For Testing</p>
+
+            @endsection

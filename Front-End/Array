@@ -1,0 +1,47 @@
+
+
+Ex: Array in view : [ Home.blade.php ]
+-------------------------------------------------------------------------------------------
+  
+  Page Controller : 
+
+             public function Show (){
+
+        $arr = [
+            'Apple' => 'Alliphon',
+            '2005' => 'Iphone5',
+            '2006' => 'Iphone6',
+            '2007' => 'Iphone7'
+        ];
+
+        return view('t',compact('arr'));
+
+    }
+    
+    **************************************************
+
+    Page Home.blade.php 
+
+    1 ) Method foreach with if  : 
+
+                @if (count($arr))  
+                    <select name="op" id="" >
+                            @foreach ($arr as $key => $ar)
+                                <option value="{{ $key }}">{{ $ar }}</option>
+                            @endforeach
+                    </select> 
+                @endif
+                        
+
+    2 ) Method forelse with empty : 
+                                
+            <select name="op" id="" >
+                @forelse ($arr as $key => $ar)
+                        <option value="{{ $key }}">{{ $ar }}</option>
+                @empty
+                        <option value="null">No Selected</option>
+                @endforelse
+            </select>
+
+
+

@@ -1,0 +1,108 @@
+
+
+
+
+                          Function   
+
+
+1) - guest :  This is a guest function .
+    Ex : 
+
+        @guest
+                 <h5>Welcome</h5>
+        @endguest
+
+
+
+2) - auth : in page controller  : 
+    Ex : 
+
+    public function Show (){
+
+        $user = \Auth::user();          // This is auth
+
+        return view('testPage',compact('user'));
+
+    }
+                    in page testPage : 
+
+        @auth
+                 <h1>Welcome , <b>{{ $user->name }}</b></h1>
+        @else
+                 <h2 style="color:blue">Welcome</h2>
+        @endauth
+
+
+
+
+
+3) - if : in page controller : 
+    Ex : 
+            public function Show (){
+
+                $info = "Remember , we only work on <b>Mondays</b>";
+
+                return view('t',compact('info'));
+            }
+
+
+
+---------------------------------------------------------------------------------------------
+
+                        An example of all  : 
+
+
+in page controller : 
+
+---------------------
+     public function Show (){
+
+            $message = __('Please Enter your Form');
+
+             $info = "Remember , we only work on <b>Mondays</b>";
+
+             $user = \Auth::user();
+
+            return view('t',compact('message','info','user'));
+     }
+
+---------------------
+
+in page masseg : 
+
+---------------------
+
+        @if (date('D') == 'Mon')
+                 <p>{!! $info !!}</p>
+        @else
+                 <p>Cloes ! .. </p>
+        @endif
+
+        @auth
+            <h1>Welcome , <b>{{ $user->name }}</b></h1>
+        @else
+            <h2 style="color:blue">Welcome</h2>
+        @endauth
+
+        @guest
+            <h5 style="color: red">No Welcome</h5>
+        @endguest
+---------------------
+
+in page t : 
+
+---------------------
+
+        @extends('layouts.app')
+
+        @section('title',__('TestPage'))
+
+        @section('content')
+
+               @include('_inc.masseg')
+
+              <p>This is For t</p>
+
+        @endsection
+---------------------
+

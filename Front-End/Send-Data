@@ -1,0 +1,17 @@
+
+
+
+                                    Send Data with Page in Controller
+
+
+    The first method : 
+
+            return view('Test', ['test' => 'Rayan']); 
+
+
+    The second method :
+
+            $data = "This is Data";
+            $name = "Rayan ";
+            return view('t',compact('data','name'));
+            
