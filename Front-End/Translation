@@ -80,6 +80,31 @@ and in page use
     Json matrices 
 
 
+    Any word you want to translate you write : {{ __('') }}
+    
+    Example :   The word in the example is Rayan
+
+
+            in page index.blade.php   
+
+        <p> {{ __('Rayan') }}
+
+    After that you create a file Name is ar.json in   resources\lang\ar.json
+
+        write This in file : 
+
+            {
+               "Rayan":"ريان",
+               "Test":"اختبار"
+
+            }
+            
+
+
+
+
+
+
 
 
 
