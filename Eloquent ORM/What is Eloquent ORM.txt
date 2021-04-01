@@ -1,0 +1,45 @@
+
+
+
+
+Eloquent ORM (Models) 
+
+
+1) - PHP Class 
+
+2) - extends Model class 
+
+3) - Each Model = toble (Article == articles)  auto laravel 
+
+4) - Models have relations 
+
+
+
+
+ Every entry in the database is a model
+
+Articles 
+
+1 - title , content , ....   
+2 - title , content , ... 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     One to One (020)
+     One to Many (02M)
+     Many to Many (M2M)
