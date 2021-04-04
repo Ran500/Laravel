@@ -1,0 +1,17 @@
+
+
+
+                        App\Name_model 
+                        App\Article 
+
+            in page Article
+---------------------------------------------------------------
+
+     class Article extends Model
+        {
+                protected $fillable = [
+                    'title',
+                    'user_id',
+                    'content'
+                ];
+        }

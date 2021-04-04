@@ -1,0 +1,26 @@
+
+Go to migration file and to your file add This : 
+
+
+        public function up()
+            {
+                Schema::create('articles', function (Blueprint $table) {
+                    $table->increments('id');
+
+                    $table->unsignedInteger('user_id');
+
+                    $table->foreign('user_id')
+                            ->references('id')
+                            ->on('users')
+                            ->onDelete('cascade');
+
+                    $table->string('title');
+
+                    $table->text('content');
+
+                    $table->timestamps();
+                });
+            }
+
+
+        # php artisan migrate

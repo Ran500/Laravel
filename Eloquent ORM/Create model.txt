@@ -4,4 +4,9 @@
 
         1 - # php artisan make:model Name 
                     Or 
-              php artisan make:model Name -m     // For create migration auto
+              php artisan make:model Name -m     // For create migration auto 
+
+      File path : app\  
+
+      ----------------------------------------------------------------------------------
+      
