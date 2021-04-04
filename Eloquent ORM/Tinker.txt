@@ -43,8 +43,12 @@ Now all the data entered into the database has been saved from the Tinker
 
 If you want to view all the data you have registered in tinker 
 
->>> $article->all()    
+>>> $article->all()   
 
+and Show all users 
+
+>>> User::all()
+ 
 ---------------------------------------------
 
 
@@ -79,3 +83,75 @@ If you want to view all the data you have registered in tinker
      created_at: "2021-04-04 05:53:11",
      id: 6,
    }
+
+
+ Or 
+
+
+ >>> $article->create(['title' => 'new title array tinker' , 'user_id' => 8 , 'content' => 'new content array tinker'])
+ => App\Article {#3487
+     title: "new title array tinker",
+     user_id: 8,
+     content: "new content array tinker",
+     updated_at: "2021-04-04 10:53:22",
+     created_at: "2021-04-04 10:53:22",
+     id: 13,
+   }
+
+
+
+
+================================================================================
+
+How to find 
+
+>>> $article->find(20)            // 20 is number of id 
+
+=> App\Article {#3885
+     id: 20,
+     user_id: 7,
+     title: "New title tinker 7",
+     content: "New content tinker 7",
+     created_at: "2021-04-04 11:06:14",
+     updated_at: "2021-04-04 11:06:14",
+   }
+
+>>> $article->find([19,20,21])  
+
+=> Illuminate\Database\Eloquent\Collection {#4120
+     all: [
+       App\Article {#4110
+         id: 19,
+         user_id: 6,
+         title: "New title tinker 6",
+         content: "New content tinker 6",
+         created_at: "2021-04-04 11:06:01",
+         updated_at: "2021-04-04 11:06:01",
+       },
+       App\Article {#3165
+         id: 20,
+         user_id: 7,
+         title: "New title tinker 7",
+         content: "New content tinker 7",
+         created_at: "2021-04-04 11:06:14",
+         updated_at: "2021-04-04 11:06:14",
+       },
+       App\Article {#3885
+         id: 21,
+         user_id: 8,
+         title: "New title tinker 8",
+         content: "New content tinker 8",
+         created_at: "2021-04-04 11:06:23",
+         updated_at: "2021-04-04 11:06:23",
+       },
+     ],
+   }
+
+
+>>> $article->find(20)->title       // Search for the title 
+
+=> "New title tinker 7"
+
+>>> $article->find(20)->content     // Search for the Content 
+
+=> "New content tinker 7"
