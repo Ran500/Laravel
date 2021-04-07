@@ -346,7 +346,11 @@ Or
 
 => true
 
+Or 
 
+>>> $article->find(16)->update(['title' => 'New title Laravel'])
+
+=> true
 
 ===========================================================================
 
@@ -374,4 +378,25 @@ Or
 
 >>> $article->destroy(15)     // This is method Delete  
 
-=> 1      // This is true   
+=> 1      // This is true  
+
+
+Or 
+
+You can Delete From Array 
+
+
+>>> $article->destroy([32,33,34,35,36,37])
+
+=> 6
+
+
+Or 
+
+>>> $article->where('title','like','%laravel Rayan')->delete()
+
+=> 1
+
+>>> $article->where('title','like','%laravel 2')->where('content','like','%content')->delete()
+
+=> 1

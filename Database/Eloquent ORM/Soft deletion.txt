@@ -1,0 +1,58 @@
+
+
+
+What is Soft deletion ? 
+
+Is to delete an item for consideration only , but it is in the database   
+
+
+
+
+========================================================================
+
+
+First prepare the database :
+                                // Edite tabel articles
+ # php artisan make:migration add_soft_delete_to_articles --table=articles 
+
+-----------------------------------------------------------
+    in page database\migration\_add_soft_delete_to_articles.php 
+
+
+ 1 - The first method : 
+
+        public function up()
+            {
+                Schema::table('articles', function (Blueprint $table) {
+
+                    $table->timestamp('deleted_at');
+
+                });
+            }
+
+ 2 - The second method : 
+
+            Schema::table('articles', function (Blueprint $table) {
+
+                    $table->softDeletes();
+
+                });
+
+
+            in function down : 
+
+        Schema::table('articles', function (Blueprint $table) {
+
+            $table->dropColumn('deleted_at');
+        
+        });
+
+
+    
+   End:  # php artisan migrate
+
+
+   If you log into the database, you will see that a new column named "deleted_at"
+
+
+   
