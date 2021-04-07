@@ -55,4 +55,97 @@ First prepare the database :
    If you log into the database, you will see that a new column named "deleted_at"
 
 
-   
+====================================================================================
+
+in page model :
+
+ add : 
+
+ use Illuminate\Database\Eloquent\SoftDeletes;
+And :
+        use SoftDeletes; // This for Treat in laravel 
+
+        protected $fillable = [
+            'title',
+            'user_id',
+            'content'
+        ];
+
+
+
+=============================================================
+
+If You go to tinker 
+    
+            
+    >>> $article->find(6)->delete()    // it is deleted , put in phpMyadmin is Existing put he not null .
+                                    // You use this : use SoftDeletes
+
+
+=============================================================
+
+Query for deleted entries : 
+
+
+    >>> $article->withTrashed()->get()
+
+   // It will also show you all the entries deleted entries
+
+   Ex: 
+
+   >>> $article->withTrashed()->find(6)  // This is id is deleted
+
+   => App\Article {#4119
+     id: 6,
+     user_id: 6,
+     title: "This is title 6",
+     content: "This is content 6",
+     created_at: "2021-04-07 15:44:57",
+     updated_at: "2021-04-07 16:14:13",
+     deleted_at: "2021-04-07 16:14:13",
+   }
+
+
+
+======================
+
+If you want to view the recycle only : 
+
+
+>>> $article->onlyTrashed()->get()
+
+=> Illuminate\Database\Eloquent\Collection {#4119
+     all: [
+       App\Article {#4115
+         id: 6,
+         user_id: 6,
+         title: "This is title 6",
+         content: "This is content 6",
+         created_at: "2021-04-07 15:44:57",
+         updated_at: "2021-04-07 16:14:13",
+         deleted_at: "2021-04-07 16:14:13",
+       },
+     ],
+   }
+
+
+
+
+==================================================================
+
+                        Recover deleted entries : restore()
+
+
+
+>>> $article->onlyTrashed()->find(6)->restore()
+
+=> true
+
+
+==================================================================
+                            Final deletion of data : forceDelete()
+
+
+>>> $article->find(6)->forceDelete()
+
+=> true
