@@ -1,0 +1,13 @@
+
+
+    one-to-one or 020 
+
+    public function article(){
+        return $this->hasOne(Article::class);   // hasOne
+    }
+
+    one-to-many or 02M 
+
+    public function articles(){
+        return $this->hasMany(Article::class);  // hasMany
+    }
